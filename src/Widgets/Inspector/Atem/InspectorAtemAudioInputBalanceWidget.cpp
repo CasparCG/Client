@@ -76,7 +76,6 @@ void InspectorAtemAudioInputBalanceWidget::loadAtemAudioInput()
     this->comboBoxInput->blockSignals(true);
 
     this->comboBoxInput->clear();
-    this->comboBoxInput->addItem("Master", "0");
 
     foreach (quint16 key, this->inputs.keys())
     {

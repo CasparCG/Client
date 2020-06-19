@@ -79,7 +79,6 @@ void InspectorAtemAudioInputStateWidget::loadAtemAudioInput()
     this->comboBoxInput->blockSignals(true);
 
     this->comboBoxInput->clear();
-    this->comboBoxInput->addItem("Master", "0");
     foreach (quint16 key, this->inputs.keys())
     {
         if (this->inputs.value(key).internalType == 0 || this->inputs.value(key).internalType == 4)
@@ -98,6 +97,9 @@ void InspectorAtemAudioInputStateWidget::blockAllSignals(bool block)
 
 void InspectorAtemAudioInputStateWidget::loadAtemInputState()
 {
+    if (comboBoxState->count())
+        return;
+
     // We do not have a command object, block the signals.
     // Events will not be triggered while we update the values.
     this->comboBoxState->blockSignals(true);
