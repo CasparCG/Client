@@ -37,7 +37,6 @@ find . -not \( -path ./Shell/shell.app/Contents/Frameworks -prune \) -name \*.dy
 # Copy binary dependencies
 echo Copying binary dependencies...
 cp -RfP ../deploy/macx/MacOS "Shell/shell.app/Contents" || fail "Could not copy binary dependencies"
-cp -RfP ../deploy/macx/Frameworks "Shell/shell.app/Contents" || fail "Could not copy binary dependencies"
 
 # Create app bundle
 echo Creating app bundle...
